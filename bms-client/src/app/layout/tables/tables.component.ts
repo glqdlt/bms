@@ -5,7 +5,7 @@ import { routerTransition } from '../../router.animations';
     selector: 'app-tables',
     templateUrl: './tables.component.html',
     styleUrls: ['./tables.component.scss'],
-    animations: [routerTransition()]
+    // animations: [routerTransition()]
 })
 export class TablesComponent implements OnInit {
     constructor() {}

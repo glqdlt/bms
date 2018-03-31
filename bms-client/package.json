@@ -4,7 +4,7 @@
     "license": "Apache",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve --port 5555 --ec true",
+        "start": "ng serve --port 5555",
         "build": "ng build --prod",
         "test": "ng test",
         "lint": "ng lint",

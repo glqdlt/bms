@@ -6,7 +6,7 @@ import { routerTransition } from '../router.animations';
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
-    animations: [routerTransition()]
+    // animations: [routerTransition()]
 })
 export class LoginComponent implements OnInit {
     constructor(public router: Router) {}
