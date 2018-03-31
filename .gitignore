@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+
+**/target
+.idea
+**/*.iml
+**/package-lock.json
+**/node_modules
+**/node
+/bms-server/src/main/resources/static/
