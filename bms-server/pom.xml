@@ -36,6 +36,10 @@
 			<groupId>com.glqdlt</groupId>
 			<artifactId>bms-common</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.glqdlt</groupId>
+			<artifactId>bms-client</artifactId>
+		</dependency>
 
 
 	</dependencies>
