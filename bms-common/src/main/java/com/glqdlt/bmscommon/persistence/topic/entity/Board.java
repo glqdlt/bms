@@ -44,7 +44,7 @@ public abstract class Board extends AbstractTimestampEntity {
     private long count = 0;
 
     @ManyToOne(targetEntity = Member.class)
-    @JoinColumn(name="member_id")
+    @JoinColumn(name="member_id", nullable = false)
     private Member member;
 
 

@@ -20,9 +20,9 @@ import javax.persistence.*;
 public class Role {
 
     @Id
-    @Column(name = "role_id")
+    @Column(name = "role_id", nullable = false)
     Integer no;
 
-    @Column(unique = true)
+    @Column(name = "label", unique = true, nullable = false)
     String label;
 }

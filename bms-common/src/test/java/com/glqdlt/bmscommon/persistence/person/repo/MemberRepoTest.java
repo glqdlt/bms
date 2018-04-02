@@ -36,50 +36,26 @@ public class MemberRepoTest {
     @Autowired
     MemberRepo memberRepo;
 
-    @Autowired
-    RoleRepo roleRepo;
-
-    @Test
-    public void init() {
-
-
-    }
-
     @Before
-    public void initData() {
-        Role userRole = new Role();
-        userRole.setNo(1);
-        userRole.setLabel("User");
-
-        Role adminRole = new Role();
-        adminRole.setNo(9);
-        adminRole.setLabel("Admin");
-
-        List<Role> roleList = new ArrayList<>();
-        roleList.add(userRole);
-        roleList.add(adminRole);
-
-        roleRepo.save(roleList);
+    public void init() {
 
 
         Member admin = new Admin();
         admin.setName("admin_user");
         admin.setId("admin");
         admin.setPassword("admin1234");
-        admin.setRole(adminRole);
+        admin.setRole(new Role().setNo(9));
 
         Member user1 = new User();
         user1.setId("user1");
         user1.setPassword("user1-1234");
         user1.setName("user_user1");
-        user1.setRole(userRole);
 
 
         Member user2 = new User();
         user2.setId("user2");
         user2.setPassword("user2-1234");
         user2.setName("user_user2");
-        user2.setRole(userRole);
 
         List<Member> members = new ArrayList<>();
         members.add(user1);
