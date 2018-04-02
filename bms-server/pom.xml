@@ -9,7 +9,6 @@
 	<packaging>jar</packaging>
 
 	<name>bms-server</name>
-	<description>Demo project for Spring Boot</description>
 
 	<parent>
 		<groupId>com.glqdlt</groupId>
@@ -36,9 +35,15 @@
 			<groupId>com.glqdlt</groupId>
 			<artifactId>bms-common</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.glqdlt</groupId>
+			<artifactId>bms-client</artifactId>
+		</dependency>
 
 
 	</dependencies>
+
+
 
 	<build>
 		<plugins>

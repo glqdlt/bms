@@ -1,5 +1,6 @@
 package com.glqdlt.bmscommon;
 
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,6 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CommonApplication{
     public static void main(String[] args) {
-        SpringApplication.run(CommonApplication.class);
+        SpringApplication application = new SpringApplication(CommonApplication.class);
+//        TODO Junit Test에서는 이 Banner.mode.off 가 동작하질 않는 다. 이게 왜 이런지 이유를 찾자.
+//        application.setBannerMode(Banner.Mode.OFF);
+        application.run(args);
     }
 }

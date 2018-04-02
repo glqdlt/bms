@@ -1,8 +1,8 @@
 package com.glqdlt.bmscommon.bmsserver;
 
-import com.glqdlt.bmscommon.persistense.members.repo.AdminRepo;
-import com.glqdlt.bmscommon.persistense.members.repo.MemberRepo;
-import com.glqdlt.bmscommon.persistense.members.repo.RoleRepo;
+import com.glqdlt.bmscommon.persistence.members.repo.AdminRepo;
+import com.glqdlt.bmscommon.persistence.members.repo.MemberRepo;
+import com.glqdlt.bmscommon.persistence.members.repo.RoleRepo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
