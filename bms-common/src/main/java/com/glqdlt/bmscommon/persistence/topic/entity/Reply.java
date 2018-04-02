@@ -1,7 +1,6 @@
-package com.glqdlt.bmscommon.persistense.topic.entity;
+package com.glqdlt.bmscommon.persistence.topic.entity;
 
-import com.glqdlt.bmscommon.persistense.AbstractTimestampEntity;
-import lombok.AllArgsConstructor;
+import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

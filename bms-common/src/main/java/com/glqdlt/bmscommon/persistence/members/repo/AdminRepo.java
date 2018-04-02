@@ -1,6 +1,6 @@
-package com.glqdlt.bmscommon.persistense.members.repo;
+package com.glqdlt.bmscommon.persistence.members.repo;
 
-import com.glqdlt.bmscommon.persistense.members.entity.Admin;
+import com.glqdlt.bmscommon.persistence.members.entity.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

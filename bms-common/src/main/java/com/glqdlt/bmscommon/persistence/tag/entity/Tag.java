@@ -1,7 +1,7 @@
-package com.glqdlt.bmscommon.persistense.tag.entity;
+package com.glqdlt.bmscommon.persistence.tag.entity;
 
-import com.glqdlt.bmscommon.persistense.AbstractTimestampEntity;
-import com.glqdlt.bmscommon.persistense.members.entity.Member;
+import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
+import com.glqdlt.bmscommon.persistence.members.entity.Member;
 import lombok.NonNull;
 
 import javax.persistence.*;

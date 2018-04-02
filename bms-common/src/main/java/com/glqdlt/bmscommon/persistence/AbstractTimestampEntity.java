@@ -1,4 +1,4 @@
-package com.glqdlt.bmscommon.persistense;
+package com.glqdlt.bmscommon.persistence;
 
 import lombok.Data;
 import lombok.ToString;

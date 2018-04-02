@@ -1,4 +1,4 @@
-package com.glqdlt.bmscommon.persistense.book.model;
+package com.glqdlt.bmscommon.persistence.book.model;
 
 /**
  * Created By iw.jhun

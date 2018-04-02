@@ -1,4 +1,4 @@
-package com.glqdlt.bmscommon.persistense.members.entity;
+package com.glqdlt.bmscommon.persistence.members.entity;
 
 import lombok.*;
 

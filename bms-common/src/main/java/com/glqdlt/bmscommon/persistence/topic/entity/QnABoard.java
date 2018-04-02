@@ -1,4 +1,4 @@
-package com.glqdlt.bmscommon.persistense.topic.entity;
+package com.glqdlt.bmscommon.persistence.topic.entity;
 
 import javax.persistence.Entity;
 

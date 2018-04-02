@@ -15,6 +15,10 @@
         <version>1.5.9.RELEASE</version>
     </parent>
 
+    <properties>
+        <bms.client.version>0.0.1-SNAPSHOT</bms.client.version>
+        <bms.common.version>0.0.1-SNAPSHOT</bms.common.version>
+    </properties>
     
     <modules>
         <module>bms-server</module>
@@ -42,12 +46,12 @@
             <dependency>
                 <groupId>com.glqdlt</groupId>
                 <artifactId>bms-common</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${bms.common.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.glqdlt</groupId>
                 <artifactId>bms-client</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${bms.client.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

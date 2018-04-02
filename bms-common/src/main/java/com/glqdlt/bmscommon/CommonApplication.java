@@ -1,5 +1,6 @@
 package com.glqdlt.bmscommon;
 
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -10,6 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CommonApplication{
     public static void main(String[] args) {
-        SpringApplication.run(CommonApplication.class);
+        SpringApplication application = new SpringApplication(CommonApplication.class);
+        application.setBannerMode(Banner.Mode.OFF);
+        application.run(args);
     }
 }
