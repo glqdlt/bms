@@ -2,6 +2,7 @@ package com.glqdlt.bmscommon.persistence.topic.entity;
 
 import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
 import com.glqdlt.bmscommon.persistence.members.entity.Member;
+import com.sun.istack.internal.NotNull;
 import lombok.*;
 
 import javax.persistence.*;
@@ -25,13 +26,15 @@ public abstract class Board extends AbstractTimestampEntity {
     @Column(name = "board_id")
     private long no;
 
+    @NotNull
     @NonNull
     private String title;
 
+    @NotNull
     @NonNull
     private String content;
 
-    @Column(name = "view_count")
+    @Column(name = "view_count",columnDefinition = "bigint(0)")
     private long count;
 
     @ManyToOne(targetEntity = Member.class)
