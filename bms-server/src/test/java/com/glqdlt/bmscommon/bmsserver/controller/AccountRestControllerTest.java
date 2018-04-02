@@ -1,18 +1,16 @@
 package com.glqdlt.bmscommon.bmsserver.controller;
 
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.glqdlt.bmscommon.persistence.members.entity.Member;
 import com.glqdlt.bmscommon.persistence.members.entity.User;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.json.GsonJsonParser;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -30,18 +28,18 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest()
-public class MemberControllerTest {
+public class AccountRestControllerTest {
 
     @Autowired
     @InjectMocks
-    private MemberController memberController;
+    private AccountRestController accountRestController;
 
     private MockMvc mockMvc;
 
     @Before
     public void mockInit(){
         MockitoAnnotations.initMocks(this);
-        mockMvc = MockMvcBuilders.standaloneSetup(memberController).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(accountRestController).build();
     }
 
     @Test
@@ -52,17 +50,14 @@ public class MemberControllerTest {
 
     @Test
     public void joinMember() throws Exception {
-//        this use jackson-datbind ..
-
         Member user = new User().setEmail("test-email@com").setName("uset-user").setPassword("password").setId("user123");
 
         String jsonString = new Gson().toJson(user);
-
-        log.info(jsonString);
-        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/member/join").content(jsonString))
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/account/user/join").contentType(MediaType.APPLICATION_JSON)
+                .content(jsonString))
                 .andReturn();
-        log.info(""+mvcResult.getResponse().getStatus());
-        log.info(mvcResult.getResponse().getContentAsString());
+
+        Assert.assertEquals(201,mvcResult.getResponse().getStatus());
     }
 
 

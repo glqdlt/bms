@@ -16,17 +16,18 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @Slf4j
-@RequestMapping("/member")
+@RequestMapping("/account")
 @RestController
-public class MemberController {
+public class AccountRestController {
 
     @Autowired
     MemberRepo memberRepo;
 
-    @RequestMapping(value = "/join", method = RequestMethod.POST)
-    public ResponseEntity createMember(@RequestBody User member) {
+    @RequestMapping(value = "/user/join", method = RequestMethod.POST)
+    public ResponseEntity saveUser(@RequestBody User member) {
 
         log.debug("Request body : " +member.toString());
+
         if (member != null) {
             if (memberRepo.findById(member.getId()) == null) {
                 memberRepo.save(member);
@@ -35,9 +36,7 @@ public class MemberController {
                 return new ResponseEntity(HttpStatus.CONFLICT);
             }
         }
-
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
-
     }
 
 
