@@ -4,6 +4,7 @@ import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
 import com.glqdlt.bmscommon.persistence.members.entity.Member;
 import com.sun.istack.internal.NotNull;
 import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
@@ -17,6 +18,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @Data
+@Accessors(chain = true)
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 public abstract class Board extends AbstractTimestampEntity {
@@ -26,11 +28,11 @@ public abstract class Board extends AbstractTimestampEntity {
     @Column(name = "board_id")
     private long no;
 
-    @NotNull
+    @Column(nullable = false)
     @NonNull
     private String title;
 
-    @NotNull
+    @Column(nullable = false)
     @NonNull
     private String content;
 

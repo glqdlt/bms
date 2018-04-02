@@ -2,9 +2,8 @@ package com.glqdlt.bmscommon.persistence.topic.entity;
 
 import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
 import com.sun.istack.internal.NotNull;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
@@ -15,6 +14,9 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @NoArgsConstructor
 @Entity
+@ToString
+@Data
+@Accessors(chain = true)
 public class Reply  extends AbstractTimestampEntity {
 
     @Column(name = "reply_id")
@@ -26,9 +28,8 @@ public class Reply  extends AbstractTimestampEntity {
     @NonNull
     private String content;
 
-    @NotNull
     @ManyToOne(targetEntity = Board.class)
-    @JoinColumn(name = "board_id")
+    @JoinColumn(name = "board_id",nullable = false)
     private Board board;
 
 }

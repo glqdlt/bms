@@ -3,6 +3,7 @@ package com.glqdlt.bmscommon.persistence.members.entity;
 import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
 import com.sun.istack.internal.NotNull;
 import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
@@ -22,6 +23,7 @@ import javax.persistence.*;
 //)
 @ToString
 @Data
+@Accessors(chain = true)
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"id"})})
 public abstract class Member extends AbstractTimestampEntity{
 
@@ -31,13 +33,15 @@ public abstract class Member extends AbstractTimestampEntity{
     @Column(name = "member_id")
     private long no;
 
-    @NotNull
+    @Column(nullable = false)
     @NonNull
     private String id;
-    @NotNull
+
+    @Column(nullable = false)
     @NonNull
     private String password;
-    @NotNull
+
+    @Column(nullable = false)
     @NonNull
     private String Name;
 
@@ -59,8 +63,8 @@ public abstract class Member extends AbstractTimestampEntity{
 // FIXME joincolumn 에서는 columnedefinition 속성의 default value가 안 먹힌다.
     // 나는 setRole 이 null 일 경우, 자동으로 1번 role을 member 에 할당시키고 싶었다.
     // 이러면 lombok 이나 Pojo layer에서 직접 getRole == null setRole(1) 이런식으로 처리를 해주어야 하나?
-    @NotNull
+    @NonNull
     @ManyToOne(targetEntity = Role.class)
-    @JoinColumn(name="role_id",columnDefinition = "int(1)")
+    @JoinColumn(name="role_id",columnDefinition = "int(1)",nullable = false)
     private Role role;
 }

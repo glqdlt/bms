@@ -1,6 +1,7 @@
 package com.glqdlt.bmscommon.persistence.members.entity;
 
 import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
@@ -14,6 +15,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @ToString
 @Data
+@Accessors(chain = true)
 @Entity
 public class Role {
 

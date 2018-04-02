@@ -7,10 +7,14 @@ import com.glqdlt.bmscommon.persistence.members.entity.User;
 import com.glqdlt.bmscommon.persistence.members.repo.MemberRepo;
 import com.glqdlt.bmscommon.persistence.members.repo.RoleRepo;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.AssertionFailure;
 import org.junit.*;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.NonTransientDataAccessException;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.transaction.Transactional;
@@ -93,15 +97,6 @@ public class MemberRepoTest {
 
 
     @Test
-    public void saveUserNullRole() {
-        Member member = new User();
-        member.setId("haha");
-
-
-        memberRepo.save(member);
-    }
-
-    @Test
     public void findByUserId() {
 
         Member user1 = memberRepo.findById("user1");
@@ -119,6 +114,7 @@ public class MemberRepoTest {
         User user = new User();
         user.setId("user3");
         user.setName("user-name-3");
+        user.setPassword("password");
         user.setRole(role);
 
         memberRepo.save(user);
