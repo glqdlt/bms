@@ -10,5 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface MemberRepo extends JpaRepository<Member, Integer> {
     Member findByNo(long no);
     Member findById(String id);
+    Member findByName(String name);
 
 }

@@ -4,6 +4,7 @@ import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
 import com.sun.istack.internal.NotNull;
 import lombok.*;
 import lombok.experimental.Accessors;
+import org.springframework.boot.jackson.JsonComponent;
 
 import javax.persistence.*;
 
@@ -42,7 +43,7 @@ public abstract class Member extends AbstractTimestampEntity{
 
     @Column(nullable = false)
     @NonNull
-    private String Name;
+    private String name;
 
 
     //    AbstractTimestampEntity 에서 상속을 받으므로 아래는 주석

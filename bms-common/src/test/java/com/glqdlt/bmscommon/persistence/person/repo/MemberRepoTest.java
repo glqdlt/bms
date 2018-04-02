@@ -5,16 +5,14 @@ import com.glqdlt.bmscommon.persistence.members.entity.Member;
 import com.glqdlt.bmscommon.persistence.members.entity.Role;
 import com.glqdlt.bmscommon.persistence.members.entity.User;
 import com.glqdlt.bmscommon.persistence.members.repo.MemberRepo;
-import com.glqdlt.bmscommon.persistence.members.repo.RoleRepo;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.AssertionFailure;
-import org.junit.*;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.dao.DataAccessException;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.NonTransientDataAccessException;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.transaction.Transactional;
@@ -40,22 +38,22 @@ public class MemberRepoTest {
     public void init() {
 
 
-        Member admin = new Admin();
-        admin.setName("admin_user");
-        admin.setId("admin");
-        admin.setPassword("admin1234");
-        admin.setRole(new Role().setNo(9));
+        Member admin = new Admin()
+                .setName("admin_user")
+                .setId("admin")
+                .setPassword("admin1234")
+                .setRole(new Role().setNo(9));
 
-        Member user1 = new User();
-        user1.setId("user1");
-        user1.setPassword("user1-1234");
-        user1.setName("user_user1");
+        Member user1 = new User()
+                .setId("user1")
+                .setPassword("user1-1234")
+                .setName("user_user1");
 
 
-        Member user2 = new User();
-        user2.setId("user2");
-        user2.setPassword("user2-1234");
-        user2.setName("user_user2");
+        Member user2 = new User()
+                .setId("user2")
+                .setPassword("user2-1234")
+                .setName("user_user2");
 
         List<Member> members = new ArrayList<>();
         members.add(user1);
@@ -67,7 +65,7 @@ public class MemberRepoTest {
     }
 
     @After
-    public void findAllMembers() {
+    public void echoAllMembers() {
 
         memberRepo.findAll().forEach(x -> log.info(x.toString()));
     }
@@ -85,27 +83,45 @@ public class MemberRepoTest {
     @Test
     public void saveNewMember() {
 
-        Role role = new Role();
-        role.setNo(1);
-
-        User user = new User();
-        user.setId("user3");
-        user.setName("user-name-3");
-        user.setPassword("password");
-        user.setRole(role);
+        Member user = new User()
+                .setId("user3")
+                .setName("user-name-3")
+                .setPassword("password");
 
         memberRepo.save(user);
         User user3 = (User) memberRepo.findById("user3");
-        log.info(user3.toString());
-        Assert.assertEquals("user3", user3.getId());
+
+
 
 //        same의 경우 객체 레퍼런스를 기준으로 비교한다.
 //        Assert.assertSame();
+        Assert.assertEquals("user3", user3.getId());
 
     }
 
     @Test
-    public void failSavedUniqueMemberId() {
-        User user = new User();
+    public void removeMemberIdAndName() {
+        memberRepo.delete(memberRepo.findById("test-admin"));
+        memberRepo.delete(memberRepo.findByName("test-user"));
+        Assert.assertNull(memberRepo.findById("test-admin"));
+        Assert.assertNull(memberRepo.findByName("test-user"));
     }
+
+    @Test
+    public void removeMembers() {
+        memberRepo.deleteAll();
+        Assert.assertEquals(0, memberRepo.findAll().size());
+    }
+
+    @Test
+    public void findMemberRole(){
+
+//        찍어보면 기대한 것과는 달리 role={no: 1, label : null } 로 찍힌다. 이게 왠 것일까?
+//        이유를 찾아보니 ..
+//        JPA는 일반적으로 트랜잭션 및 비 트랜잭션으로 분류 할 수있는 캐시에 대해 서로 다른 트랜잭션 격리 수준을 지원합니다.
+//        이런 뉘앙스를 발견했다, 아무래도 @Transactional 의 영향인듯 하다
+        log.info("qq"+memberRepo.findByName("user_user1").toString());
+
+    }
+
 }

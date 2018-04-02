@@ -20,16 +20,7 @@ public class BmsServerApplication implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication.run(BmsServerApplication.class, args);
     }
-    @Autowired
-    MemberRepo memberRepo;
 
-    @Autowired
-    RoleRepo roleRepo;
-
-    @Autowired
-    AdminRepo adminRepo;
-
-    @Transactional
     @Override
     public void run(String... args) throws Exception {
 
