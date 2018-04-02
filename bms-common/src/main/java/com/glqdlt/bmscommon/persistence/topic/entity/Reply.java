@@ -24,7 +24,7 @@ public class Reply  extends AbstractTimestampEntity {
     @GeneratedValue
     private long no;
 
-    @NotNull
+    @Column(nullable = false)
     @NonNull
     private String content;
 

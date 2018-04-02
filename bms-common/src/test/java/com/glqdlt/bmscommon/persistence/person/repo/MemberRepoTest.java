@@ -79,6 +79,7 @@ public class MemberRepoTest {
         user2.setId("user2");
         user2.setPassword("user2-1234");
         user2.setName("user_user2");
+        user2.setRole(userRole);
 
         List<Member> members = new ArrayList<>();
         members.add(user1);

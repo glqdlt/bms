@@ -27,7 +27,6 @@ import javax.persistence.*;
 @Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"id"})})
 public abstract class Member extends AbstractTimestampEntity{
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "member_id")
@@ -46,7 +45,7 @@ public abstract class Member extends AbstractTimestampEntity{
     private String Name;
 
 
-//    AbstractTimestampEntity 에서 상속을 받으므로 아래는 주석
+    //    AbstractTimestampEntity 에서 상속을 받으므로 아래는 주석
 //    @CreationTimestamp
 //    @Temporal(TemporalType.TIMESTAMP)
 //    private Date createTime;
@@ -60,11 +59,13 @@ public abstract class Member extends AbstractTimestampEntity{
     private String email;
 
 
-// FIXME joincolumn 에서는 columnedefinition 속성의 default value가 안 먹힌다.
+    // fixmeDone joincolumn 에서는 columnedefinition 속성의 default value가 안 먹힌다.
     // 나는 setRole 이 null 일 경우, 자동으로 1번 role을 member 에 할당시키고 싶었다.
-    // 이러면 lombok 이나 Pojo layer에서 직접 getRole == null setRole(1) 이런식으로 처리를 해주어야 하나?
+    // 이러면 lombok 이나 Pojo layer에서 직접 getRole == null setRole(1) 이런식으로 처리를 해주어야 하나? 코드 치기 싫은 데
+    // 그래서 롬복의 @builder.default 어노테이션으로 role == null 일 경우 role을 setNo1 식으로 하게끔 처리하였다.
     @NonNull
     @ManyToOne(targetEntity = Role.class)
-    @JoinColumn(name="role_id",columnDefinition = "int(1)",nullable = false)
-    private Role role;
+    @JoinColumn(name="role_id",nullable = false)
+    @Builder.Default
+    private Role role = new Role().setNo(1);
 }
