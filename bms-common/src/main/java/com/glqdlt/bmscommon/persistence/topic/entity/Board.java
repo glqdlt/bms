@@ -35,8 +35,8 @@ public abstract class Board extends AbstractTimestampEntity {
     @NonNull
     private String content;
 
-//    todo 이상하게 ColumnDefination 이 db에 반영이 안된다.. 음?.. 그래서 롬복의 default로 처리하기로 함.
-//    @Column(name = "view_count",columnDefinition = "bigint(0)")
+//  이상하게 <code>@Column(name = "view_count",columnDefinition = "bigint(0)")</code> 이 db에 반영이 안된다..
+//  그래서 롬복의 <code>@Builder.Default</code> 로 처리하기로 함.
     @Column(name = "view_count")
     @Builder.Default
     private long count = 0;

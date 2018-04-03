@@ -37,7 +37,6 @@ public class AccountRestController {
             }
         }
         throw new ApiException(ApiErrorMessage.BAD_REQUEST);
-//        return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
 
