@@ -2,6 +2,7 @@ package com.glqdlt.bmscommon.persistence.book.entity;
 
 import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
 import com.glqdlt.bmscommon.persistence.artist.entity.Author;
+import com.glqdlt.bmscommon.persistence.tag.entity.Tag;
 import lombok.Data;
 import lombok.ToString;
 import lombok.experimental.Accessors;
@@ -17,9 +18,11 @@ import java.util.Date;
 @Accessors(chain = true)
 @ToString
 @Data
+@Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 public abstract class Book extends AbstractTimestampEntity{
 
+    @Column(name = "book_id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long no;
@@ -37,4 +40,7 @@ public abstract class Book extends AbstractTimestampEntity{
     @Column(nullable = false)
     private int status;
 
+    @JoinColumn(name="tag_id")
+    @ManyToOne(targetEntity = Tag.class)
+    private Tag tag;
 }
