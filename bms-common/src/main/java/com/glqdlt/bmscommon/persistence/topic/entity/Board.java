@@ -2,10 +2,8 @@ package com.glqdlt.bmscommon.persistence.topic.entity;
 
 import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
 import com.glqdlt.bmscommon.persistence.members.entity.Member;
-import com.sun.istack.internal.NotNull;
 import lombok.*;
 import lombok.experimental.Accessors;
-import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 
