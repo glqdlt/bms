@@ -28,6 +28,6 @@ public class BookArchiveServer extends AbstractTimestampEntity{
 
     private String url;
 
-    private Admin creator;
+//    private Admin creator;
 
 }

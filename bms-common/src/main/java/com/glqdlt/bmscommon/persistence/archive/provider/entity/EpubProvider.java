@@ -19,7 +19,7 @@ public class EpubProvider {
 
     @Column(name = "provider_id")
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private int no;
 
     @Column(unique = true)
