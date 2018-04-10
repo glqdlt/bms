@@ -1,6 +1,5 @@
 package com.glqdlt.bmscommon.persistence.book.entity;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -14,14 +13,14 @@ public class ScheduleTest {
 
     @Test
     public void isScheduleNone() {
-        Schedule schedule = Schedule.none;
+        Schedule schedule = Schedule.NONE;
         assertEquals(false, schedule.isSchedule());
     }
 
     @Test
     public void isScheduleSet(){
 
-        Schedule schedule = Schedule.set;
+        Schedule schedule = Schedule.SET;
         assertEquals(true,schedule.isSchedule());
     }
 

@@ -6,12 +6,12 @@ package com.glqdlt.bmscommon.persistence.book.entity;
  */
 public enum Schedule {
 
-    set{
+    SET{
         public boolean isSchedule(){
             return true;
         }
     },
-    none;
+    NONE;
 
     public boolean isSchedule(){
         return false;

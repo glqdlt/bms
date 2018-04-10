@@ -6,6 +6,7 @@ import com.glqdlt.bmscommon.persistence.tag.entity.Tag;
 import lombok.Data;
 import lombok.ToString;
 import lombok.experimental.Accessors;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -39,6 +40,12 @@ public abstract class Book extends AbstractTimestampEntity{
 
     @Column(nullable = false)
     private int status;
+
+    private Schedule schedule;
+
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date scheduleDate;
 
     @JoinColumn(name="tag_id")
     @ManyToOne(targetEntity = Tag.class)
