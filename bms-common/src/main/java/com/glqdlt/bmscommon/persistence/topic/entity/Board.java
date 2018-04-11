@@ -45,6 +45,4 @@ public abstract class Board extends AbstractTimestampEntity {
     @JoinColumn(name="member_id", nullable = false)
     private Member member;
 
-
-
 }
