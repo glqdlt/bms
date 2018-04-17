@@ -3,16 +3,29 @@ package com.glqdlt.bmscommon.persistence.members.entity;
 import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+//import org.hibernate.validator.constraints.Email;
+//import org.hibernate.validator.constraints.NotBlank;
+//import org.hibernate.validator.constraints.NotEmpty;
+//
 import javax.persistence.*;
+//import javax.validation.Valid;
+//import javax.validation.constraints.Pattern;
+//import javax.validation.constraints.Size;
 
 /**
  * Created By iw.jhun
  * On 2018-03-30 , 오후 1:42
  */
 
+// jpa validation
+    // jsr 380 레퍼런스 http://www.baeldung.com/javax-validation
+    //https://www.owasp.org/index.php/Bean_Validation_Cheat_Sheet
 //@DiscriminatorColumn(discriminatorType = DiscriminatorType.INTEGER,name = "role",columnDefinition = "INT(1)")
 //@Data
 //@Accessors(chain = true)
+
 @Getter
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -33,11 +46,13 @@ public abstract class Member extends AbstractTimestampEntity {
 
     @Column(nullable = false)
     @NonNull
+//    @NotEmpty
+//    @Pattern(regexp = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$", message = "Password Validation Wrong")
+//    @Size(max = 10)
     private String password;
 
-    public void changePassword(String password){
-        validValueNull(password);
-        validValueLength(password, MemberValidEnum.PASSWORD_LENGTH);
+
+    public void changePassword(String password) {
         this.password = password;
     }
 
@@ -47,11 +62,8 @@ public abstract class Member extends AbstractTimestampEntity {
     private String name;
 
     public void changeName(String name) {
-        validValueNull(name);
-        validValueLength(name, MemberValidEnum.NAME_LENGTH);
         this.name = name;
     }
-
 
 
     //    AbstractTimestampEntity 에서 상속을 받으므로 아래는 주석
@@ -65,36 +77,14 @@ public abstract class Member extends AbstractTimestampEntity {
 //    private Date updateTime;
 
 
+//    @Email
     private String email;
 
 
     public void changeEmail(String email) {
-        validValueNull(email);
         this.email = email;
     }
 
-    private <T> void validValueNull(T t) {
-
-        if (t instanceof String) {
-
-            if (t.equals("")) {
-                throw new RuntimeException();
-            }
-
-        } else {
-
-            if (t == null) {
-
-                throw new RuntimeException();
-            }
-        }
-    }
-
-    private void validValueLength(String value, MemberValidEnum length){
-        if(value.length() > length.getLength()){
-            throw new RuntimeException();
-        }
-    }
 
     // fixmeDone joincolumn 에서는 columnedefinition 속성의 default value가 안 먹힌다.
     // 나는 setRole 이 null 일 경우, 자동으로 1번 role을 member 에 할당시키고 싶었다.

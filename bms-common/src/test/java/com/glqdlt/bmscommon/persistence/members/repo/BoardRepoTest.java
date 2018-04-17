@@ -65,7 +65,7 @@ public class BoardRepoTest {
     }
 
     @After
-    public void findAllArticle(){
+    public void shouldFindAllArticle(){
         boardRepo.findAll().forEach(x -> log.info(x.toString()));
     }
 

@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.*;
  * On 2018-03-30 , 오후 3:07
  */
 
+
+// TODO Spring 의 valid 구현
+
 @Slf4j
 @RequestMapping("/account")
 @RestController

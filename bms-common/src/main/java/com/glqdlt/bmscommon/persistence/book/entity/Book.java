@@ -33,6 +33,11 @@ public abstract class Book extends AbstractTimestampEntity{
     @Column(nullable = false)
     private String title;
 
+    public void changeTitle(String title){
+
+        this.title = title;
+    }
+
     @NonNull
     @JoinColumn(name = "author_id")
     @ManyToOne(targetEntity = Author.class)

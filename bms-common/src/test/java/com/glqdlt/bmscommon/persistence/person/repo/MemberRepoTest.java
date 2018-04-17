@@ -71,7 +71,7 @@ public class MemberRepoTest {
 
 
     @Test
-    public void findByUserId() {
+    public void shouldFindByUserId() {
 
         Member user1 = memberRepo.findById("user1");
         Assert.assertEquals("user1", user1.getId());
@@ -80,7 +80,7 @@ public class MemberRepoTest {
 
 
     @Test
-    public void saveNewMember() {
+    public void shouldSaveNewMember() {
 
         Member user = new User("user3","user1234","user3");
         memberRepo.save(user);
@@ -95,7 +95,7 @@ public class MemberRepoTest {
     }
 
     @Test
-    public void removeMemberIdAndName() {
+    public void shouldRemoveMemberIdAndName() {
         memberRepo.delete(memberRepo.findById("test-admin"));
         memberRepo.delete(memberRepo.findByName("test-user"));
         Assert.assertNull(memberRepo.findById("test-admin"));
@@ -103,13 +103,13 @@ public class MemberRepoTest {
     }
 
     @Test
-    public void removeMembers() {
+    public void shouldRemoveMembers() {
         memberRepo.deleteAll();
         Assert.assertEquals(0, memberRepo.findAll().size());
     }
 
     @Test
-    public void findMemberRole(){
+    public void shouldFindMemberRole(){
 
 //        찍어보면 기대한 것과는 달리 role={no: 1, label : null } 로 찍힌다. 이게 왠 것일까?
 //        이유를 찾아보니 ..
