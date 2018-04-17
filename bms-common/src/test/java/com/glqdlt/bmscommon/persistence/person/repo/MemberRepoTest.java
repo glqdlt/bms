@@ -34,26 +34,26 @@ public class MemberRepoTest {
     @Autowired
     MemberRepo memberRepo;
 
-    @Before
+//    @Before
+    private void setUp(){
+        init();
+    }
+
+    @Test
     public void init() {
 
 
-        Member admin = new Admin()
-                .setName("admin_user")
-                .setId("admin")
-                .setPassword("admin1234")
-                .setRole(new Role().setNo(9));
-
-        Member user1 = new User()
-                .setId("user1")
-                .setPassword("user1-1234")
-                .setName("user_user1");
+//        Member admin = new Admin()
+//                .setName("admin_user")
+//                .setId("admin")
+//                .setPassword("admin1234")
+//                .setRole(new Role().setNo(9));
 
 
-        Member user2 = new User()
-                .setId("user2")
-                .setPassword("user2-1234")
-                .setName("user_user2");
+        Admin admin = new Admin("admin_user","admin1234","admin");
+        User user1 = new User("user1","user1234","user1");
+        User user2 = new User("user2","user1234","user2s");
+
 
         List<Member> members = new ArrayList<>();
         members.add(user1);
@@ -61,7 +61,6 @@ public class MemberRepoTest {
         members.add(admin);
 
         memberRepo.save(members);
-
     }
 
     @After
@@ -83,11 +82,7 @@ public class MemberRepoTest {
     @Test
     public void saveNewMember() {
 
-        Member user = new User()
-                .setId("user3")
-                .setName("user-name-3")
-                .setPassword("password");
-
+        Member user = new User("user3","user1234","user3");
         memberRepo.save(user);
         User user3 = (User) memberRepo.findById("user3");
 

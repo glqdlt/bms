@@ -11,4 +11,11 @@ import javax.persistence.*;
 //@DiscriminatorValue("9")
 @Entity
 public class Admin extends Member {
+
+    public Admin() {
+    }
+
+    public Admin(String id, String password, String name) {
+        super(id, password, name);
+    }
 }

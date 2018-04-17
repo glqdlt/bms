@@ -24,9 +24,11 @@ public class OrSpecification<T> implements Specification<T> {
 
     @Override
     public Predicate toPredicate(Root root, CriteriaQuery query, CriteriaBuilder cb) {
-        Predicate[] predicates = specs.stream()
-                .map(spec -> spec.toPredicate(root, query, cb))
-                .toArray(Predicate[]::new);
-        return cb.or(predicates);
+        // FIXME cannot be converted to Predicate[] 에 대한 처리를 모르겠다,  추후 변경.
+//        Predicate[] predicates = specs.stream()
+//                .map(spec -> spec.toPredicate(root, query, cb))
+//                .toArray(Predicate[]::new);
+//        return cb.or(predicates);
+        return null;
     }
 }

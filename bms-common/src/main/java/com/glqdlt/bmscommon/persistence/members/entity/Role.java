@@ -11,18 +11,22 @@ import javax.persistence.*;
  */
 
 //Role은 Enum 객체로 뽑아도 될 거 같은데 JPA 에서 지원하질 않는다고 한다.. 아쉽
-@AllArgsConstructor
+//@AllArgsConstructor
+//@Data
+//@Accessors(chain = true)
 @NoArgsConstructor
+@RequiredArgsConstructor
 @ToString
-@Data
-@Accessors(chain = true)
 @Entity
+@Getter
 public class Role {
 
+    @NonNull
     @Id
     @Column(name = "role_id", nullable = false)
     Integer no;
 
+    @NonNull
     @Column(name = "label", unique = true, nullable = false)
     String label;
 }

@@ -1,5 +1,6 @@
 package com.glqdlt.bmscommon.bmsserver.common.errors;
 
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 /**
@@ -22,16 +23,18 @@ public enum ApiErrorMessage {
     INTERNAL_ERROR(HttpStatus.INTERNAL_SERVER_ERROR,"서버에서 응답이 거부되었습니다.");
 
 
+    @Getter
     private HttpStatus httpStatus;
+    @Getter
     private String message;
 
-    public HttpStatus getHttpStatus() {
-        return httpStatus;
-    }
-
-    public String getMessage() {
-        return message;
-    }
+//    public HttpStatus getHttpStatus() {
+//        return httpStatus;
+//    }
+//
+//    public String getMessage() {
+//        return message;
+//    }
 
 
     ApiErrorMessage(HttpStatus httpStatus, String message) {

@@ -10,4 +10,10 @@ import javax.persistence.Entity;
 @Entity
 public class User extends Member {
 
+    public User() {
+    }
+
+    public User(String id, String password, String name) {
+        super(id, password, name);
+    }
 }

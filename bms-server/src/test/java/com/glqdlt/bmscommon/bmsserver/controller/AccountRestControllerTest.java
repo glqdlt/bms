@@ -50,7 +50,8 @@ public class AccountRestControllerTest {
 
     @Test
     public void joinMember() throws Exception {
-        Member user = new User().setEmail("test-email@com").setName("uset-user").setPassword("password").setId("user123");
+        Member user = new User("user","password","username");
+        user.changeEmail("hello@hello.com");
 
         String jsonString = new Gson().toJson(user);
         MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/account/user/join").contentType(MediaType.APPLICATION_JSON)

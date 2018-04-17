@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
  * Created By iw.jhun
  * On 2018-04-02 , 오후 1:42
  */
-@Transactional
+//@Transactional
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest()
@@ -36,19 +36,25 @@ public class BoardRepoTest {
     @Autowired
     MemberRepo memberRepo;
 
-    @Before
+//    @Before
     public void init(){
 
-        Board noticeBoard = new NoticeBoard()
-                .setTitle("test notice 1")
-                .setContent("Hello Every one~~")
-                .setMember(memberRepo.findById("test-user"));
+        // 리팩토링
+//        Board noticeBoard = new NoticeBoard()
+//                .setTitle("test notice 1")
+//                .setContent("Hello Every one~~")
+//                .setMember(memberRepo.findById("test-user"));
+
+//        memberRepo.findAll().forEach(x-> log.info(x.toString()));
+        Board noticeBoard = new NoticeBoard("test notice 1","Hello",memberRepo.findById("root"));
 
         boardRepo.save(noticeBoard);
 
-        Reply noticeReply = new Reply()
-                .setBoard(noticeBoard)
-                .setContent("wow good");
+//        Reply noticeReply = new Reply()
+//                .setBoard(noticeBoard)
+//                .setContent("wow good");
+
+        Reply noticeReply = new Reply("wow good board!!",noticeBoard);
 
         replyRepo.save(noticeReply);
 

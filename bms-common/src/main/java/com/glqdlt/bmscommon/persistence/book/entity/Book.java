@@ -3,8 +3,7 @@ package com.glqdlt.bmscommon.persistence.book.entity;
 import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
 import com.glqdlt.bmscommon.persistence.artist.entity.Author;
 import com.glqdlt.bmscommon.persistence.tag.entity.Tag;
-import lombok.Data;
-import lombok.ToString;
+import lombok.*;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -16,9 +15,11 @@ import java.util.Date;
  * On 2018-04-02 , 오후 6:02
  */
 
+@RequiredArgsConstructor
+@NoArgsConstructor
 @Accessors(chain = true)
 @ToString
-@Data
+@Getter
 @Inheritance(strategy = InheritanceType.JOINED)
 @Entity
 public abstract class Book extends AbstractTimestampEntity{
@@ -28,9 +29,11 @@ public abstract class Book extends AbstractTimestampEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long no;
 
+    @NonNull
     @Column(nullable = false)
     private String title;
 
+    @NonNull
     @JoinColumn(name = "author_id")
     @ManyToOne(targetEntity = Author.class)
     private Author author;
@@ -47,6 +50,7 @@ public abstract class Book extends AbstractTimestampEntity{
     @Temporal(TemporalType.TIMESTAMP)
     private Date scheduleDate;
 
+    @NonNull
     @JoinColumn(name="tag_id")
     @ManyToOne(targetEntity = Tag.class)
     private Tag tag;

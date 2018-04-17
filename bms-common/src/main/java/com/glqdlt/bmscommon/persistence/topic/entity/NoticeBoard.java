@@ -1,5 +1,9 @@
 package com.glqdlt.bmscommon.persistence.topic.entity;
 
+import com.glqdlt.bmscommon.persistence.members.entity.Member;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+
 import javax.persistence.Entity;
 
 /**
@@ -10,5 +14,11 @@ import javax.persistence.Entity;
 @Entity
 public class NoticeBoard extends Board {
 
+    public NoticeBoard() {
+        super();
+    }
 
+    public NoticeBoard(String title, String content, Member member) {
+        super(title, content, member);
+    }
 }
