@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
 
 /**
  * Created By iw.jhun
- * On 2018-04-17 , 오후 4:32
+ * On 2018-04-17
  */
 @Slf4j
 @RunWith(SpringRunner.class)

@@ -4,7 +4,7 @@ import lombok.Getter;
 
 /**
  * Created By iw.jhun
- * On 2018-04-17 , 오후 4:01
+ * On 2018-04-17
  */
 @Deprecated
 public enum ValidRule {

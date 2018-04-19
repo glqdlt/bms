@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 
 /**
  * Created By iw.jhun
- * On 2018-03-30 , 오후 1:49
+ * On 2018-03-30
  */
 @Entity
 public class QnABoard extends Board{

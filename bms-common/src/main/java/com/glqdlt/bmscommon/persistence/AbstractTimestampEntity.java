@@ -13,7 +13,7 @@ import java.util.Date;
 
 /**
  * Created By iw.jhun
- * On 2018-03-30 , 오후 5:40
+ * On 2018-03-30
  */
 @ToString
 @Data

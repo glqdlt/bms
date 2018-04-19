@@ -2,7 +2,7 @@ package com.glqdlt.bmscommon.helper.valid;
 
 /**
  * Created By iw.jhun
- * On 2018-04-17 , 오후 4:24
+ * On 2018-04-17
  */
 @Deprecated
 public class ValidUtill {

@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 /**
  * Created By iw.jhun
- * On 2018-04-02 , 오후 4:05
+ * On 2018-04-02
  */
 @Slf4j
 @RunWith(SpringRunner.class)

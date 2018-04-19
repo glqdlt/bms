@@ -10,7 +10,7 @@ import javax.persistence.*;
 
 /**
  * Created By iw.jhun
- * On 2018-04-02 , 오후 6:19
+ * On 2018-04-02
  */
 
 @Accessors(chain = true)

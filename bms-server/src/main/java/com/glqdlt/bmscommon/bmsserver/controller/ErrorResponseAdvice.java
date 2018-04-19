@@ -13,7 +13,7 @@ import java.util.Enumeration;
 
 /**
  * Created By iw.jhun
- * On 2018-04-03 , 오후 3:19
+ * On 2018-04-03
  */
 @Slf4j
 @RestControllerAdvice

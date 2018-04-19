@@ -2,7 +2,7 @@ package com.glqdlt.bmscommon.persistence.book.entity;
 
 /**
  * Created By iw.jhun
- * On 2018-04-10 , 오전 10:45
+ * On 2018-04-10
  */
 public enum Schedule {
 

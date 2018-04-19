@@ -9,7 +9,7 @@ import javax.persistence.*;
 
 /**
  * Created By iw.jhun
- * On 2018-03-30 , 오후 1:44
+ * On 2018-03-30
  */
 
 //    DDD 의 원칙에 따라 domain model 의 상태변화는 자기 자신만 한다를 적용해서 롬복의 setter를 없애기 위한 주석

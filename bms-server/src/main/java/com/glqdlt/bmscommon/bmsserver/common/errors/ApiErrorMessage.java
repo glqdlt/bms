@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 
 /**
  * Created By iw.jhun
- * On 2018-04-03 , 오후 3:03
+ * On 2018-04-03
  */
 public enum ApiErrorMessage {
 

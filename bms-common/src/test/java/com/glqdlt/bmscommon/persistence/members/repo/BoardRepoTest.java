@@ -19,7 +19,7 @@ import static org.junit.Assert.*;
 
 /**
  * Created By iw.jhun
- * On 2018-04-02 , 오후 1:42
+ * On 2018-04-02
  */
 //@Transactional
 @Slf4j

@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 /**
  * Created By iw.jhun
- * On 2018-04-10 , 오전 10:47
+ * On 2018-04-10
  */
 public class ScheduleTest {
 

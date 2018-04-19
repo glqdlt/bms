@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  * Created By iw.jhun
- * On 2018-04-03 , 오후 4:11
+ * On 2018-04-03
  */
 @ToString
 public class ApiErrorModel {

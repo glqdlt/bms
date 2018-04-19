@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * Created By iw.jhun
- * On 2018-04-11 , 오후 3:45
+ * On 2018-04-11
  */
 public class OrSpecification<T> implements Specification<T> {
 

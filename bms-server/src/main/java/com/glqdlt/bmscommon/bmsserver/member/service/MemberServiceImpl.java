@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * Created By iw.jhun
- * On 2018-04-02 , 오후 4:02
+ * On 2018-04-02
  */
 @Service
 public class MemberServiceImpl implements MemberService {

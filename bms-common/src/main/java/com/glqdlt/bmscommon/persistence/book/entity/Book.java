@@ -12,7 +12,7 @@ import java.util.Date;
 
 /**
  * Created By iw.jhun
- * On 2018-04-02 , 오후 6:02
+ * On 2018-04-02
  */
 
 @RequiredArgsConstructor

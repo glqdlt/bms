@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 
 /**
  * Created By iw.jhun
- * On 2018-04-02 , 오후 6:11
+ * On 2018-04-02
  */
 @RequiredArgsConstructor
 @NoArgsConstructor

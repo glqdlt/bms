@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  * Created By iw.jhun
- * On 2018-03-30 , 오후 2:05
+ * On 2018-03-30
  */
 // ignore 로 빌드 시에 skip 하도록 한다.
 //@Ignore

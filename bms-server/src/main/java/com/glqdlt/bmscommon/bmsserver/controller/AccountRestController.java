@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * Created By iw.jhun
- * On 2018-03-30 , 오후 3:07
+ * On 2018-03-30
  */
 
 

@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 /**
  * Created By iw.jhun
- * On 2018-04-02 , 오후 6:27
+ * On 2018-04-02
  */
 
 @Entity

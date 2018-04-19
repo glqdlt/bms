@@ -1,12 +1,8 @@
 package com.glqdlt.bmscommon.helper.valid;
 
-import com.glqdlt.bmscommon.persistence.members.entity.Member;
-import org.springframework.validation.Errors;
-import org.springframework.validation.Validator;
-
 /**
  * Created By iw.jhun
- * On 2018-04-17 , 오후 5:33
+ * On 2018-04-17
  */
  @Deprecated
 //public class MemberValidator implements Validator{

@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 
 /**
  * Created By iw.jhun
- * On 2018-04-03 , 오후 3:38
+ * On 2018-04-03
  */
 public class ApiException extends  RuntimeException {
     private HttpStatus httpStatus;

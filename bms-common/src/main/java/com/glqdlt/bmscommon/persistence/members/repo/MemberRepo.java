@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * Created By iw.jhun
- * On 2018-03-30 , 오후 2:05
+ * On 2018-03-30
  */
 public interface MemberRepo extends JpaRepository<Member, Integer> {
     Member findByNo(long no);
