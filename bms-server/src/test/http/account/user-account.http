@@ -3,6 +3,9 @@
 
 # User 가입
 
-POST http://{{host}}/account/user/join
+POST {{host}}
+        /account
+        /user
+        /join
 ###
 
