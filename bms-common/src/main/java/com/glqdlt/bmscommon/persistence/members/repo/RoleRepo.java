@@ -9,5 +9,5 @@ import org.springframework.data.repository.CrudRepository;
  * On 2018-03-30
  */
 public interface RoleRepo extends CrudRepository<Role,Integer> {
-    public Admin findByNo(long no);
+    Admin findByNo(long no);
 }

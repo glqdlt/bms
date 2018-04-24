@@ -1,4 +1,4 @@
-package com.glqdlt.bmscommon.bmsserver.interceptor;
+package com.glqdlt.bmscommon.bmsserver.supports.interceptor;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -26,7 +26,7 @@ public class CertificationInterceptor extends HandlerInterceptorAdapter {
 //
 //        }
 
-        log.info("{},{} \n",request.getSession().getId(),request.getRemoteUser());
+        log.info("{},{} ",request.getSession().getId(),request.getRemoteUser());
 
 
         // pass

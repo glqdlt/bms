@@ -8,5 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * On 2018-03-30
  */
 public interface AdminRepo extends JpaRepository<Admin, Integer> {
-    public Admin findByNo(long no);
+    Admin findByNo(long no);
 }
