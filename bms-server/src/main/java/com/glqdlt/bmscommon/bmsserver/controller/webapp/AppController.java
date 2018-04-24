@@ -1,9 +1,10 @@
 package com.glqdlt.bmscommon.bmsserver.controller.webapp;
 
+import com.glqdlt.bmscommon.bmsserver.supports.annotation.AppGrant;
+import com.glqdlt.bmscommon.bmsserver.supports.annotation.AppGrantType;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -16,10 +17,19 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class AppController {
 
-    @RequestMapping(value = "/",method = RequestMethod.GET)
+//    @RequestMapping(value = "/",method = RequestMethod.GET)
+    @GetMapping("/")
     public String appRoot(HttpServletRequest request){
 
             log.info("Session Get ID {}",request.getSession().getId());
+
+        return "index";
+    }
+
+    @AppGrant(type = AppGrantType.ADMIN)
+    @GetMapping("/admin")
+    public String adminRoot(HttpServletRequest request){
+
 
         return "index";
     }

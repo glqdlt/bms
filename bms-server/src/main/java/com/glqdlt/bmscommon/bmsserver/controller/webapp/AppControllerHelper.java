@@ -1,4 +1,4 @@
-package com.glqdlt.bmscommon.bmsserver.supports.aop;
+package com.glqdlt.bmscommon.bmsserver.controller.webapp;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -19,7 +19,7 @@ import java.time.LocalTime;
 @Slf4j
 @Aspect
 @Component
-public class AppRootControllerHelper {
+public class AppControllerHelper {
 
     private void printNowTime(JoinPoint joinPoint) {
         for (Object arg : joinPoint.getArgs()) {

@@ -1,4 +1,4 @@
-package com.glqdlt.bmscommon.bmsserver.supports.interceptor;
+package com.glqdlt.bmscommon.bmsserver.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
