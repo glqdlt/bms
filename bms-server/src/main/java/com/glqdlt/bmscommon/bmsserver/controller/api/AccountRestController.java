@@ -1,4 +1,4 @@
-package com.glqdlt.bmscommon.bmsserver.controller;
+package com.glqdlt.bmscommon.bmsserver.controller.api;
 
 import com.glqdlt.bmscommon.bmsserver.common.errors.ApiErrorMessage;
 import com.glqdlt.bmscommon.bmsserver.common.errors.ApiException;
