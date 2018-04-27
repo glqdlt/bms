@@ -1,9 +1,10 @@
 package com.glqdlt.bmscommon.persistence.topic.entity;
 
 import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
-import com.sun.istack.internal.NotNull;
-import lombok.*;
-import lombok.experimental.Accessors;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 

@@ -19,7 +19,7 @@
         <bms.client.version>0.0.1-SNAPSHOT</bms.client.version>
         <bms.common.version>0.0.1-SNAPSHOT</bms.common.version>
     </properties>
-    
+
     <modules>
         <module>bms-server</module>
         <module>bms-common</module>
@@ -57,5 +57,20 @@
         </dependencies>
     </dependencyManagement>
 
-
+    <build>
+        <plugins>
+            <!--mvn spring-boot:run -Dspring-boot.run.profiles=product-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <!--<version>2.0.1.RELEASE</version>-->
+                <configuration>
+                    <profiles>
+                        <profile>internal</profile>
+                        <profile>product</profile>
+                    </profiles>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
