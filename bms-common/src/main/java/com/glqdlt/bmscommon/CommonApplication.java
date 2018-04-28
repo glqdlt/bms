@@ -2,11 +2,15 @@ package com.glqdlt.bmscommon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 
 /**
  * Created By iw.jhun
  * On 2018-03-30
  */
+@PropertySource(value ="classpath:datasource-${spring.profiles.active:default}.properties")
 @SpringBootApplication
 public class CommonApplication{
     public static void main(String[] args) {

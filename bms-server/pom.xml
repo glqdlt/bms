@@ -61,8 +61,6 @@
 
 	</dependencies>
 
-
-
 	<build>
 		<plugins>
 			<plugin>
@@ -70,9 +68,18 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 
-
-		</plugins>
+					<!--mvn spring-boot:run -Dspring-boot.run.profiles=product-->
+					<plugin>
+						<groupId>org.springframework.boot</groupId>
+						<artifactId>spring-boot-maven-plugin</artifactId>
+						<version>1.5.9.RELEASE</version>
+						<configuration>
+							<profiles>
+								<profile>internal</profile>
+								<profile>product</profile>
+							</profiles>
+						</configuration>
+					</plugin>
+				</plugins>
 	</build>
-
-
 </project>
