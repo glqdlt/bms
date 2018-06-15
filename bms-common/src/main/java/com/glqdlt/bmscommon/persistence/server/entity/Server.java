@@ -29,7 +29,7 @@ public class Server  extends AbstractTimestampEntity {
     private String ip;
 
     @Column(name = "ssh_port")
-    private String port;
+    private Integer port;
 
     private String mac;
 
