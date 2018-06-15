@@ -3,6 +3,7 @@ package com.glqdlt.bmscommon.persistence.server.entity;
 import com.glqdlt.bmscommon.persistence.AbstractTimestampEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
