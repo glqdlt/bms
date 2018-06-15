@@ -1,6 +1,6 @@
 package com.glqdlt.bmscommon.persistence.book.entity;
 
-import com.glqdlt.bmscommon.persistence.archive.provider.entity.EpubProvider;
+import com.glqdlt.bmscommon.persistence.archive.provider.entity.EbookServiceProvider;
 import lombok.*;
 import lombok.experimental.Accessors;
 
@@ -22,7 +22,7 @@ public class EBook extends Book {
 
     @NonNull
     @JoinColumn(name = "provider_id")
-    @ManyToOne(targetEntity = EpubProvider.class)
-    private EpubProvider epubProvider;
+    @ManyToOne(targetEntity = EbookServiceProvider.class)
+    private EbookServiceProvider ebookServiceProvider;
 
 }
