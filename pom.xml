@@ -16,8 +16,9 @@
     </parent>
 
     <properties>
-        <bms.client.version>0.0.1-SNAPSHOT</bms.client.version>
-        <bms.common.version>0.0.1-SNAPSHOT</bms.common.version>
+        <!--<bms.client.version>0.0.1-SNAPSHOT</bms.client.version>-->
+        <bms.common.version>0.0.2-SNAPSHOT</bms.common.version>
+        <bms.server.version>0.0.2-SNAPSHOT</bms.server.version>
     </properties>
 
     <modules>
@@ -48,6 +49,11 @@
                 <groupId>com.glqdlt</groupId>
                 <artifactId>bms-common</artifactId>
                 <version>${bms.common.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.glqdlt</groupId>
+                <artifactId>bms-server</artifactId>
+                <version>${bms.server.version}</version>
             </dependency>
             <!--<dependency>-->
                 <!--<groupId>com.glqdlt</groupId>-->
