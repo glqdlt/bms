@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Accessors(chain = true)
 @Data
 @ToString
-public class EpubProvider {
+public class EbookServiceProvider {
 
     @Column(name = "provider_id")
     @Id

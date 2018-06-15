@@ -8,6 +8,7 @@ import org.springframework.util.concurrent.ListenableFuture;
  * Created By iw.jhun
  * On 2018-04-27
  */
+@Deprecated
 public class AdminMailMessageClient implements MessageClientAdaptor {
 
     // TODO admin-setting 정보는 redmine 처럼 처음에는 공란이고, 시스템이 최초 운영 된후 데이터베이스에 기입될 때 가져와야함으로.. 이에 대한 로직 구현 필요.
