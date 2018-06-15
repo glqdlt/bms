@@ -6,6 +6,7 @@ import lombok.*;
  * Created By iw.jhun
  * On 2018-04-27
  */
+@Deprecated
 @ToString
 @Data
 public class RedisQueueSetting {

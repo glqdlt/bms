@@ -15,8 +15,9 @@ import java.util.Map;
  * Created By iw.jhun
  * On 2018-04-27
  */
+@Deprecated
 @Slf4j
-@Component
+//@Component
 public class RedisQueueClient implements MessageClientAdaptor {
 
     @Autowired

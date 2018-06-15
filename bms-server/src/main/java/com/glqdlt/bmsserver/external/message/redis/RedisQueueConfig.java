@@ -8,7 +8,8 @@ import org.springframework.context.annotation.Configuration;
  * Created By iw.jhun
  * On 2018-04-27
  */
-@Configuration
+@Deprecated
+//@Configuration
 public class RedisQueueConfig {
 
     @Bean(name= "redis-message-setting")

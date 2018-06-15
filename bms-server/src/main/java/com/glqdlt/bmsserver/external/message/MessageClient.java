@@ -7,6 +7,7 @@ import org.springframework.util.concurrent.ListenableFuture;
  * Created By iw.jhun
  * On 2018-04-27
  */
+@Deprecated
 @Slf4j
 public class MessageClient<T> {
 
