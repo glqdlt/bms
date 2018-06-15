@@ -1,0 +1,8 @@
+
+POST {{host}}
+             /server
+             /1
+             /power
+             /on
+
+###
