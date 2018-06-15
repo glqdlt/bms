@@ -19,14 +19,14 @@ import org.springframework.web.bind.annotation.*;
 // TODO Spring 의 valid 구현
 
 @Slf4j
-@RequestMapping("/account")
+@RequestMapping(value = "/account",method = RequestMethod.POST)
 @RestController
 public class AccountRestController {
 
     @Autowired
     MemberRepo memberRepo;
 
-    @RequestMapping(value = "/user/join", method = RequestMethod.POST)
+    @PostMapping(value = "/user/join")
     public ResponseEntity saveUser(@RequestBody User member) {
 
         log.debug("Request body : " + member.toString());
