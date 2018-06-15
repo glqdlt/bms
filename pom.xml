@@ -23,7 +23,7 @@
     <modules>
         <module>bms-server</module>
         <module>bms-common</module>
-        <module>bms-client</module>
+        <!--<module>bms-client</module>-->
     </modules>
 
 
@@ -49,11 +49,11 @@
                 <artifactId>bms-common</artifactId>
                 <version>${bms.common.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.glqdlt</groupId>
-                <artifactId>bms-client</artifactId>
-                <version>${bms.client.version}</version>
-            </dependency>
+            <!--<dependency>-->
+                <!--<groupId>com.glqdlt</groupId>-->
+                <!--<artifactId>bms-client</artifactId>-->
+                <!--<version>${bms.client.version}</version>-->
+            <!--</dependency>-->
         </dependencies>
     </dependencyManagement>
 
