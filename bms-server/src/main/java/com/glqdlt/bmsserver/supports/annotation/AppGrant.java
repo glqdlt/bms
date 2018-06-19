@@ -15,4 +15,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD)
 public @interface AppGrant {
     AppGrantType type() default AppGrantType.GUEST;
+    String value() default "normal";
 }
