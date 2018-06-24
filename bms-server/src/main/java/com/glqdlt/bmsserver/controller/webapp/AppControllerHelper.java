@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -40,6 +41,18 @@ public class AppControllerHelper {
 
         log.debug("What ? : {} {} {} {}", joinPoint.getArgs(), joinPoint.getKind(), joinPoint.getSignature(), joinPoint.getTarget());
         printNowTime(joinPoint,StopWatcher.End);
+    }
+
+
+// @AppGrant 가 선언 된 곳에 AOP
+    @After("@annotation(com.glqdlt.bmsserver.supports.annotation.AppGrant)")
+    public void writeAudit(JoinPoint joinPoint) {
+        String adminId = "";
+        for (Object obj : joinPoint.getArgs()) {
+            if(obj instanceof Principal){
+                adminId = ((Principal) obj).getName();
+            }
+        }
     }
 
 
