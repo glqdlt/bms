@@ -16,7 +16,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Server  extends AbstractTimestampEntity {
+public class Server extends AbstractTimestampEntity {
 
 
     @Column(name = "server_id")
@@ -24,15 +24,26 @@ public class Server  extends AbstractTimestampEntity {
     @GeneratedValue
     private Integer no;
 
-    private String name;
+    @Column(name = "server_name")
+    private String serverName;
 
+    @Column(nullable = false)
     private String ip;
 
-    @Column(name = "ssh_port")
+    @Column(name = "ssh_port", nullable = false)
     private Integer port;
 
+    @Column(nullable = false)
     private String mac;
 
+    @Column(name = "server_type")
     private ServerType type;
+
+    @Column(name = "user_id", nullable = false)
+    private String userId;
+
+    @Column(name = "user_password", nullable = false)
+    private String userPw;
+
 
 }
