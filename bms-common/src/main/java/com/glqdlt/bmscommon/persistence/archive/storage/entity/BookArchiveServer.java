@@ -21,7 +21,7 @@ public class BookArchiveServer extends AbstractTimestampEntity{
 
     @Id
     @GeneratedValue
-    @Column(name = "archive_id")
+    @Column(name = "archiveId")
     private long no;
 
     private String url;

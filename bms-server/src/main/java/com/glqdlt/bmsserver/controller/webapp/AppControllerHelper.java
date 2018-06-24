@@ -26,37 +26,35 @@ public class AppControllerHelper {
     private void printNowTime(JoinPoint joinPoint, StopWatcher watcher) {
         for (Object arg : joinPoint.getArgs()) {
             if (arg instanceof HttpServletRequest) {
-                log.info("[Request Watch "+watcher.getMessage()+"] SessionID :'{}', DateTime : {}", ((HttpServletRequest) arg).getSession().getId() , LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+                log.info("[Request Watch " + watcher.getMessage() + "] SessionID :'{}', DateTime : {}", ((HttpServletRequest) arg).getSession().getId(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
             }
         }
     }
 
     @Before("execution(* com.glqdlt.bmsserver.controller.webapp.AppController.*(..) )")
     public void checkBefore(JoinPoint joinPoint) {
-        printNowTime(joinPoint,StopWatcher.Start);
+        printNowTime(joinPoint, StopWatcher.Start);
     }
 
     @After("execution(* com.glqdlt.bmsserver.controller.webapp.AppController.*(..) )")
     public void checkAfter(JoinPoint joinPoint) {
 
         log.debug("What ? : {} {} {} {}", joinPoint.getArgs(), joinPoint.getKind(), joinPoint.getSignature(), joinPoint.getTarget());
-        printNowTime(joinPoint,StopWatcher.End);
+        printNowTime(joinPoint, StopWatcher.End);
     }
 
-
-// @AppGrant 가 선언 된 곳에 AOP
+    // @AppGrant 가 선언 된 곳에
     @After("@annotation(com.glqdlt.bmsserver.supports.annotation.AppGrant)")
-    public void writeAudit(JoinPoint joinPoint) {
+    public void checkAuthentication(JoinPoint joinPoint) {
         String adminId = "";
-        for (Object obj : joinPoint.getArgs()) {
-            if(obj instanceof Principal){
-                adminId = ((Principal) obj).getName();
+        for (Object p : joinPoint.getArgs()) {
+            if (p instanceof Principal) {
+                adminId = ((Principal) p).getName();
             }
         }
     }
 
-
-    enum StopWatcher{
+    enum StopWatcher {
         Start("Start"), End("End");
 
         StopWatcher(String message) {

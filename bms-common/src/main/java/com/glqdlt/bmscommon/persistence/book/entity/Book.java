@@ -34,21 +34,21 @@ public abstract class Book extends AbstractTimestampEntity{
     private String title;
 
     public void changeTitle(String title){
-
         this.title = title;
     }
 
     @NonNull
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "authorId")
     @ManyToOne(targetEntity = Author.class)
     private Author author;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date date;
+    private Date regDate;
 
     @Column(nullable = false)
     private int status;
 
+    @Enumerated(value = EnumType.ORDINAL)
     private Schedule schedule;
 
     @UpdateTimestamp

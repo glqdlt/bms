@@ -23,7 +23,7 @@ public class Role {
 
     @NonNull
     @Id
-    @Column(name = "role_id", nullable = false)
+    @Column(name = "roleId", nullable = false)
     Integer no;
 
     @NonNull

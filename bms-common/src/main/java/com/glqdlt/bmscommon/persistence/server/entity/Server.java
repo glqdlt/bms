@@ -6,10 +6,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Getter
@@ -19,31 +16,32 @@ import javax.persistence.Id;
 public class Server extends AbstractTimestampEntity {
 
 
-    @Column(name = "server_id")
+    @Column(name = "serverId")
     @Id
     @GeneratedValue
     private Integer no;
 
-    @Column(name = "server_name")
+    @Column(name = "serverName")
     private String serverName;
 
     @Column(nullable = false)
     private String ip;
 
-    @Column(name = "ssh_port", nullable = false)
+    @Column(name = "sshPort", nullable = false)
     private Integer port;
 
     @Column(nullable = false)
     private String mac;
 
-    @Column(name = "server_type")
+    @Enumerated(value = EnumType.STRING)
+    @Column(name = "serverType")
     private ServerType type;
 
-    @Column(name = "user_id", nullable = false)
+    @Column(nullable = false)
     private String userId;
 
-    @Column(name = "user_password", nullable = false)
-    private String userPw;
+    @Column(nullable = false)
+    private String userPassword;
 
 
 }

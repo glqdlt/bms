@@ -17,7 +17,7 @@ import javax.persistence.*;
 @ToString
 public class EbookServiceProvider {
 
-    @Column(name = "provider_id")
+    @Column(name = "providerId")
     @Id
     @GeneratedValue
     private int no;

@@ -28,15 +28,6 @@ public enum ApiErrorMessage {
     @Getter
     private String message;
 
-//    public HttpStatus getHttpStatus() {
-//        return httpStatus;
-//    }
-//
-//    public String getMessage() {
-//        return message;
-//    }
-
-
     ApiErrorMessage(HttpStatus httpStatus, String message) {
         this.httpStatus = httpStatus;
         this.message = message;

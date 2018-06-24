@@ -37,7 +37,7 @@ public abstract class Member extends AbstractTimestampEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "member_id")
+    @Column(name = "memberId")
     private long no;
 
     @Column(nullable = false)
@@ -92,7 +92,7 @@ public abstract class Member extends AbstractTimestampEntity {
     // 그래서 롬복의 @builder.default 어노테이션으로 role == null 일 경우 role을 setNo1 식으로 하게끔 처리하였다.
     @NonNull
     @ManyToOne(targetEntity = Role.class)
-    @JoinColumn(name = "role_id", nullable = false)
+    @JoinColumn(name = "roleId", nullable = false)
     @Builder.Default
     private Role role = new Role(1, "user");
 }

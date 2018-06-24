@@ -21,7 +21,7 @@ import javax.persistence.ManyToOne;
 public class EBook extends Book {
 
     @NonNull
-    @JoinColumn(name = "provider_id")
+    @JoinColumn(name = "providerId")
     @ManyToOne(targetEntity = EbookServiceProvider.class)
     private EbookServiceProvider ebookServiceProvider;
 

@@ -1,4 +1,4 @@
-package com.glqdlt.bmsserver.controller.api;
+package com.glqdlt.bmsserver.controller.api.account;
 
 import com.glqdlt.bmsserver.common.errors.ApiErrorMessage;
 import com.glqdlt.bmsserver.common.errors.ApiException;
@@ -14,12 +14,9 @@ import org.springframework.web.bind.annotation.*;
  * Created By iw.jhun
  * On 2018-03-30
  */
-
-
 // TODO Spring 의 valid 구현
-
 @Slf4j
-@RequestMapping(value = "/account",method = RequestMethod.POST)
+@RequestMapping(value = "/account")
 @RestController
 public class AccountRestController {
 
@@ -38,6 +35,11 @@ public class AccountRestController {
             }
         }
         throw new ApiException(ApiErrorMessage.BAD_REQUEST);
+    }
+
+    @GetMapping(value= "/user/detail/{userId}")
+    public ResponseEntity findDetailUser(@PathVariable("userId") String id){
+        return new ResponseEntity(HttpStatus.OK);
     }
 
 

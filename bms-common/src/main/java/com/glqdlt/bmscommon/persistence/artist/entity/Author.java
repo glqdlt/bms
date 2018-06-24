@@ -17,7 +17,7 @@ import javax.persistence.Id;
 @Entity
 public class Author {
 
-    @Column(name="author_id")
+    @Column(name="authorId")
     @Id
     @GeneratedValue
     private long no;
